@@ -7,6 +7,10 @@ class User < ApplicationRecord
   attachment :profile_image, destroy: false
   has_many :books, dependent: :destroy
 
+  has_many :chats
+  has_many :user_rooms
+  has_many :rooms, through: :user_rooms
+
   validates :name, uniqueness: true
   validates :name, length: {maximum: 20, minimum: 2}
   validates :introduction, length: {maximum: 50}
