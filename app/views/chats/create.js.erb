@@ -1,0 +1,2 @@
+$(".chat-list").html("<%= escape_javascript(render('chats/list', chats: @chats)) %>");
+$("#chat-form").val('');

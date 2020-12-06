@@ -1,0 +1,11 @@
+<%= @user.name%>さんとの
+<h1>チャットルームです </h1>
+<% @chats.each do |chat| %>
+<%= chat.message %>
+<% end %>
+<div class="posts">
+  <%= form_for @chat, url: room_chats_path(@room.id) do |f| %>
+  <%= f.text_field :message, placeholder: "メッセージを入力して下さい" , size: 70, class:"form-text-field" %>
+  <%= f.submit "投稿",class: 'form-submit'%>
+  <% end %>
+</div>
