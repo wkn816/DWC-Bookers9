@@ -1,2 +1,2 @@
-$(".chat-list").html("<%= escape_javascript(render('chats/list', chats: @chats)) %>");
-$("#chat-form").val('');
+$('.message').append("<p style='text-align: right;'><%= @chat.message %></p>");
+$('input[type=text]').val("")
